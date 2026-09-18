@@ -86,3 +86,35 @@ SpeakBridge focuses on making English practice more accessible through practical
                     │ Learning        │
                     │ Progress        │
                     └─────────────────┘
+
+
+
+## 🏗️ Application Architecture
+
+The application follows a Flutter-based architecture where the user interface communicates with application logic and external services.
+
+```text
+                    ┌─────────────────────┐
+                    │       User          │
+                    └──────────┬──────────┘
+                               │
+                               ▼
+                    ┌─────────────────────┐
+                    │   Flutter UI        │
+                    │   (Dart)            │
+                    └──────────┬──────────┘
+                               │
+                 ┌─────────────┼─────────────┐
+                 │             │             │
+                 ▼             ▼             ▼
+          ┌────────────┐ ┌────────────┐ ┌────────────┐
+          │ Speech-to- │ │ Translation│ │ Learning   │
+          │ Text       │ │ APIs       │ │ Features   │
+          └─────┬──────┘ └─────┬──────┘ └─────┬──────┘
+                │              │              │
+                └──────────────┼──────────────┘
+                               ▼
+                    ┌─────────────────────┐
+                    │      Firebase       │
+                    │ Backend Services    │
+                    └─────────────────────┘
